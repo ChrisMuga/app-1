@@ -12,6 +12,11 @@
                 <button type="submit"   class="btn btn-primary      form-control mr-3">Enter</button>
                 <button type="reset"    class="btn btn-secondary    form-control mr-3">Clear</button>
             </div>
+            @if( session('msg') )
+                <div class="alert alert-danger my-2">
+                    {{session('msg')}}
+                </div>
+            @endif
         </form>
     </div>
 </div>

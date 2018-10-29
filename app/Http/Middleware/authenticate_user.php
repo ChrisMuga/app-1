@@ -22,8 +22,11 @@ class authenticate_user
         }
         else
         {
-            return 'no';
+            return redirect('/')
+                        ->with('msg',"Cannot view users because you're not logged in");
         }
+       
+        
         
     }
 }
