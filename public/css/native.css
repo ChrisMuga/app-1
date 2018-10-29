@@ -1,0 +1,21 @@
+.top-div
+{
+    border      : solid thin;
+    padding     : 20px;
+}
+
+body
+{
+    font-family : sans-serif;
+}
+input
+{
+    padding     : 20px;
+    margin      : 5px;
+}
+.span-x
+{
+    background  : lightseagreen;
+    padding     : 10px;
+}
+.form-control{ border-radius: 0px; }
