@@ -10,9 +10,11 @@
         <script src="js/jquery-3.3.1.min.js"></script>
     <head>
     <body>
-        <div id="app">
-            <navbar></navbar>
-            <jumbotron></jumbotron> 
+        <div class="container">
+            <div id="app">
+                <navbar class="mb-1"></navbar>
+                <jumbotron></jumbotron> 
+            </div>
         </div>
         @yield('content')
         <script src="js/bootstrap.min.js"></script>

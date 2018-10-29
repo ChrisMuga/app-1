@@ -9,3 +9,7 @@
         </p>
     </div>
 </template>
+<style scoped>
+.jumbotron{border-radius: 0px;}
+</style>
+
