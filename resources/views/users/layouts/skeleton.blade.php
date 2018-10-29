@@ -2,8 +2,8 @@
     <head>
         <title>App-1</title>
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <link rel="stylesheet" href="css/native.css"/>
         <link rel="stylesheet" href="css/bootstrap.min.css"/>  
+        
         {{-- csrf for broadcasting --}}
         <meta name="csrf-token" content="{{ csrf_token() }}">
         {{-- csrf for broadcasting --}}

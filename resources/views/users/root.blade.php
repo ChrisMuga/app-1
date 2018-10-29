@@ -5,6 +5,16 @@
         <div class="col-md-3 p-3">
             <h2>Welcome, {{Auth::user()->name}}</h2>
             <span class="badge badge-success">You're logged in</span>
+            <hr>
+            @if( session('code') && session('code') == 1 )
+                <div class="alert alert-info alert-dismissible fade show" role="alert">
+                    <i>{{Auth::user()->email_address}} Logged in.</i>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            @endif
+            
         </div>
         {{-- info --}}
 

@@ -41,15 +41,25 @@ class userController extends Controller
         $user->location         =   $request->location;
         $user->email_address    =   $request->email_address;
         $user->password         =   Hash::make($request->password);
+        $user->remember_token   =   $request->_token;
 
         #save record
 
         try
         {
             $user->save();
-            return back()
-                        ->with('code',1)
-                        ->with('msg', 'Entry Successful');
+            #fetch credentials
+            $credentials = $request->only('email_address','password');
+
+            #check/validate
+            if (Auth::attempt($credentials)) 
+            {
+                #Authentication passed.
+                return redirect('users')
+                                        ->with('code',1)
+                                        ->with('msg', 'Entry Successful');
+            }
+                       
         }
         catch(Exception $e)
         {
