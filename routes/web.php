@@ -12,7 +12,7 @@
 */
 
 #root
-Route::get('users','userController@root')->middleware('authenticate_user');
+Route::get('user/{id}','userController@root')->middleware('authenticate_user');
 #new user
 Route::post('new-user','userController@newUser');
 #index

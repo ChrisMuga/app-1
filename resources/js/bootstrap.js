@@ -47,6 +47,7 @@ if (token) {
 import Echo from 'laravel-echo'
 
 window.Pusher = require('pusher-js');
+window.Pusher.logToConsole = true;
 
 window.Echo = new Echo({
     broadcaster: 'pusher',
@@ -54,3 +55,8 @@ window.Echo = new Echo({
     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
     encrypted: true
 });
+
+Echo.channel('user')
+    .listen('newLogin', (e) => {
+        console.log(e.user.name);
+    });

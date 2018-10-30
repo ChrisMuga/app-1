@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 
+#events
 use App\Events\newUser;
+use App\Events\userLogin;
 
 #models
 use App\user;
@@ -59,6 +61,8 @@ class userController extends Controller
                                         ->with('code',1)
                                         ->with('msg', 'Entry Successful');
             }
+
+            
                        
         }
         catch(Exception $e)
@@ -85,8 +89,13 @@ class userController extends Controller
         #check/validate
         if (Auth::attempt($credentials)) 
         {
+            #get user details
+            $user = Auth::user();
+            #want to broadcast log-in event
+            event(new userLogin($user));
+
             #Authentication passed.
-            return redirect('users');
+            return redirect('user/'.$user->id);
         }
         else
         {

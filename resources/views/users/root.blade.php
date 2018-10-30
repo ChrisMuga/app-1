@@ -29,6 +29,5 @@
             </ul>
         </div>
         {{-- users --}}
-    </div>
- 
+    </div> 
 @endsection
