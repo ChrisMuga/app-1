@@ -14039,9 +14039,9 @@ window.Popper = __webpack_require__(3).default;
  */
 
 try {
-    window.$ = window.jQuery = __webpack_require__(4);
+  window.$ = window.jQuery = __webpack_require__(4);
 
-    __webpack_require__(17);
+  __webpack_require__(17);
 } catch (e) {}
 
 /**
@@ -14063,9 +14063,9 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 var token = document.head.querySelector('meta[name="csrf-token"]');
 
 if (token) {
-    window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
+  window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
 } else {
-    console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
+  console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
 }
 
 /**
@@ -14080,14 +14080,10 @@ window.Pusher = __webpack_require__(38);
 window.Pusher.logToConsole = true;
 
 window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
-    broadcaster: 'pusher',
-    key: "82392777e89d910bbb8f",
-    cluster: "ap2",
-    encrypted: true
-});
-
-__WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a.channel('user').listen('newLogin', function (e) {
-    console.log(e.user.name);
+  broadcaster: 'pusher',
+  key: "82392777e89d910bbb8f",
+  cluster: "ap2",
+  encrypted: true
 });
 
 /***/ }),
@@ -57708,13 +57704,13 @@ var staticRenderFns = [
               _c("li", { staticClass: "nav-item" }, [
                 _c(
                   "a",
-                  { staticClass: "nav-link", attrs: { href: "register" } },
+                  { staticClass: "nav-link", attrs: { href: "/register" } },
                   [_vm._v("Register")]
                 )
               ]),
               _vm._v(" "),
               _c("li", { staticClass: "nav-item" }, [
-                _c("a", { staticClass: "nav-link", attrs: { href: "users" } }, [
+                _c("a", { staticClass: "nav-link", attrs: { href: "/user" } }, [
                   _vm._v("Users")
                 ])
               ]),
@@ -57722,7 +57718,7 @@ var staticRenderFns = [
               _c("li", { staticClass: "nav-item" }, [
                 _c(
                   "a",
-                  { staticClass: "nav-link", attrs: { href: "logout" } },
+                  { staticClass: "nav-link", attrs: { href: "/logout" } },
                   [_vm._v("Logout")]
                 )
               ])

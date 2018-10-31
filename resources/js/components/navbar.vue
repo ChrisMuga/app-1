@@ -11,13 +11,13 @@
                 <a class="nav-link" href="/">Login</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="register">Register</a>
+                <a class="nav-link" href="/register">Register</a>
             </li>
              <li class="nav-item">
-                <a class="nav-link" href="users">Users</a>
+                <a class="nav-link" href="/user">Users</a>
             </li>
              <li class="nav-item">
-                <a class="nav-link" href="logout">Logout</a>
+                <a class="nav-link" href="/logout">Logout</a>
             </li>
         </ul>
     </div>

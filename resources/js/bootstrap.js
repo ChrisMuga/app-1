@@ -56,7 +56,4 @@ window.Echo = new Echo({
     encrypted: true
 });
 
-Echo.channel('user')
-    .listen('newLogin', (e) => {
-        console.log(e.user.name);
-    });
+

@@ -2,8 +2,6 @@
 
 namespace App\Events;
 
-use App\user;
-
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Broadcasting\PrivateChannel;
@@ -12,7 +10,7 @@ use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 
-class userLogin implements ShouldBroadcast
+class testEvent implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
@@ -21,13 +19,16 @@ class userLogin implements ShouldBroadcast
      *
      * @return void
      */
-
-    public $user;
-    public function __construct($user)
+    public $data;
+    public function __construct()
     {
-        //
-        $this->user = $user;
-        
+        #assignment
+        $this->data = array (
+                                "Nairobi",
+                                "Mombasa",
+                                "Kisumu",
+                                "Nakuru"
+                            );
     }
 
     /**
@@ -37,6 +38,6 @@ class userLogin implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return new Channel('testChannel');
+        return new PrivateChannel('testChannel');
     }
 }

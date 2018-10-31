@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 #events
 use App\Events\newUser;
 use App\Events\userLogin;
+use App\Events\testEvent;
 
 #models
 use App\user;
@@ -91,6 +92,8 @@ class userController extends Controller
         {
             #get user details
             $user = Auth::user();
+            #return $user;
+
             #want to broadcast log-in event
             event(new userLogin($user));
 
@@ -117,6 +120,20 @@ class userController extends Controller
     {
         Auth::logout();
         return redirect('/');
+    }
+
+    #push
+    public function push(Request $request)
+    {  
+        if (Auth::check())
+        {
+            event( new testEvent() );
+            echo "OK.";
+        }
+        else
+        {
+            echo "False.";
+        }
     }
 
 }

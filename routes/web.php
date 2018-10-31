@@ -1,5 +1,14 @@
 <?php
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
+#events
+use App\Events\newUser;
+use App\Events\userLogin;
+
+#models
+use App\user;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,3 +32,5 @@ Route::post('validate-login', 'UserController@validateuser');
 Route::get('register', 'UserController@register');
 #logout
 Route::get('logout', 'UserController@logout');
+#push
+Route::get('push', 'UserController@push');

@@ -1,4 +1,5 @@
 <?php
+use App\Broadcasting\testChannel;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,3 +19,5 @@ Broadcast::channel('App.User.{id}', function ($user, $id) {
 Broadcast::channel('user.{id}', function ($user, $id) {
     return $user->id == $id;
 });
+
+Broadcast::channel('testChannel', testChannel::class);
