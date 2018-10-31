@@ -19,11 +19,13 @@
         <script src="js/bootstrap.min.js"></script>
         <script src="{{ asset('js/app.js') }}"></script>
         @if(Auth::check())
+        <div class="alert alert-success"> Yuh </div>
             <script>
                 Echo.channel('testChannel')
                 .listen('userLogin', (e) => {
-                    console.log(e);
-                    console.log('end');
+                    // console.log(e);
+                    // console.log('end');
+                    alert(e.user.name);
                 });
             </script>
         @endif

@@ -20,4 +20,6 @@ Broadcast::channel('user.{id}', function ($user, $id) {
     return $user->id == $id;
 });
 
-Broadcast::channel('testChannel', testChannel::class);
+Broadcast::channel('testChannel', function () {
+    return true;
+});
